@@ -1,5 +1,7 @@
-﻿using eGameStore.Data;
+﻿using eGameStore.Data.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 
 namespace eGameStore.Models
 {
@@ -14,6 +16,16 @@ namespace eGameStore.Models
         public DateTime ReleaseDate { get; set; }
 
         public GameGenre GameGenre { get; set; }
+
+        //Relationship with Developer
+        public int DeveloperId { get; set; }
+        [ForeignKey("DeveloperId")]
+        public Developer Developer { get; set; }
+
+        //Relationship with Publisher
+        public int PublisherId { get; set; }
+        [ForeignKey("PublisherId")]
+        public Publisher Publisher { get; set; }
 
     }
 }

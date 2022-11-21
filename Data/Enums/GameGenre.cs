@@ -1,4 +1,4 @@
-﻿namespace eGameStore.Data
+﻿namespace eGameStore.Data.Enums
 {
     public enum GameGenre
     {
@@ -9,6 +9,5 @@
         Puzzle,
         ActionAdventure,
         Shooter
-
     }
 }
