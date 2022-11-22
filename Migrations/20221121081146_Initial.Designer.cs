@@ -12,7 +12,7 @@ using eGameStore.Data;
 namespace eGameStore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221120073345_Initial")]
+    [Migration("20221121081146_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

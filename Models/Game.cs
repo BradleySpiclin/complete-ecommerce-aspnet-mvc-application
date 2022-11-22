@@ -1,7 +1,6 @@
 ﻿using eGameStore.Data.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics;
 
 namespace eGameStore.Models
 {
