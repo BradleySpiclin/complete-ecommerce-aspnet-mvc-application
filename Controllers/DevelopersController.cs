@@ -17,7 +17,7 @@ namespace eGameStore.Controllers
         public async Task<IActionResult> Index()
         {
             var allDevelopers = await _context.Developer.ToListAsync();
-            return View();
+            return View(allDevelopers);
         }
     }
 }
