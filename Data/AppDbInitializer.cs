@@ -112,19 +112,19 @@ namespace eGameStore.Data
                                 new Publisher()
                                 {
                                     FullName = "Blizzard Entertainment",
-                                    ProfilePictureURL = "Images/publisher.png",
+                                    ProfilePictureURL = "https://i.imgur.com/yrl3McY.jpg",
                                     Bio = "Bio for blizzard entertainment"
                                 },
                                 new Publisher()
                                 {
                                     FullName = "Electronic Arts",
-                                    ProfilePictureURL = "Images/publisher.png",
+                                    ProfilePictureURL = "https://i.imgur.com/yrl3McY.jpg",
                                     Bio = "Bio for EA"
                                 },
                                 new Publisher()
                                 {
                                     FullName = "Microsoft",
-                                    ProfilePictureURL = "Images/publisher.png",
+                                    ProfilePictureURL = "https://i.imgur.com/yrl3McY.jpg",
                                     Bio = "Bio for microsoft"
                                 },
 

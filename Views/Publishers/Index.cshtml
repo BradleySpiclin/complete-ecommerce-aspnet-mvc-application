@@ -1,10 +1,10 @@
-﻿@model IEnumerable<Developer>
+﻿@model IEnumerable<Publisher>
 
 
 @* Define model*@
 
 @{
-	ViewData["Title"] = "List of Developers";
+	ViewData["Title"] = "List of Publishers";
 }
 
 <div class="row">
@@ -23,7 +23,7 @@
 				{
 					<tr class="text-center">
 						<td class="align-middle">
-							<img class="rounded-circle" src="@item.ProfilePictureURL" alt="@item.FullName" style="max-width: 150px"/>
+							<img class="rounded-circle" src="@item.ProfilePictureURL" alt="@item.FullName" style="max-width: 150px" />
 						</td>
 						<td class="align-middle">
 							@Html.DisplayFor(modelItem => item.FullName)
@@ -35,10 +35,11 @@
 							<a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i>Edit</a> |
 							<a class="btn btn-outline-info"><i class="bi bi-eye"></i>Details</a> |
 							<a class="btn btn-danger text-white"><i class="bi bi-trash"></i>Delete</a>
+
 						</td>
 					</tr>
 				}
-		
+
 			</tbody>
 		</table>
 	</div>

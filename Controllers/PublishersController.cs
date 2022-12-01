@@ -16,7 +16,7 @@ namespace eGameStore.Controllers
         public async Task<IActionResult> Index()
         {
             var allPublishers= await _context.Publisher.ToListAsync();
-            return View();
+            return View(allPublishers);
         }
     }
 }

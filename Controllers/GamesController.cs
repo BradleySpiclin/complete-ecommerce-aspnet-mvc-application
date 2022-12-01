@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace eGameStore.Controllers
 {
-    public class GameController : Controller
+    public class GamesController : Controller
     {
         private readonly AppDbContext _context;
 
-        public GameController(AppDbContext context)
+        public GamesController(AppDbContext context)
         {
             _context = context;
         }
@@ -16,7 +16,7 @@ namespace eGameStore.Controllers
         public async Task<IActionResult> Index()
         {
             var allGames = await _context.Games.ToListAsync();
-            return View();
+            return View(allGames);
         }
     }
 }
