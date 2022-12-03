@@ -16,14 +16,15 @@ namespace eGameStore.Models
 
         public GameGenre GameGenre { get; set; }
 
-        //Relationship with Developer
-        public int DeveloperId { get; set; }
-        [ForeignKey("DeveloperId")]
+		//Relationship with Developer
+		[ForeignKey("DeveloperId")]
+		public int DeveloperId { get; set; }
         public Developer Developer { get; set; }
 
-        //Relationship with Publisher
-        public int PublisherId { get; set; }
-        [ForeignKey("PublisherId")]
+		//Relationship with Publisher
+		[ForeignKey("PublisherId")]
+		public int PublisherId { get; set; }
+    
         public Publisher Publisher { get; set; }
 
     }

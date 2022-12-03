@@ -15,7 +15,7 @@ namespace eGameStore.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var allGames = await _context.Games.ToListAsync();
+            var allGames = await _context.Games.Include(n => n.Developer).Include(n => n.Publisher).OrderBy(n => n.Name).ToListAsync();
             return View(allGames);
         }
     }
