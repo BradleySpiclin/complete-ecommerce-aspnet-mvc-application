@@ -1,4 +1,5 @@
 ﻿using eGameStore.Data;
+using eGameStore.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,17 +7,16 @@ namespace eGameStore.Controllers
 {
     public class DevelopersController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IDevelopersService _service;
 
-
-        public DevelopersController(AppDbContext context)
+        public DevelopersController(IDevelopersService service)
         {
-            _context = context;
+            _service = service;
         }
 
         public async Task<IActionResult> Index()
         {
-            var allDevelopers = await _context.Developer.ToListAsync();
+            var allDevelopers = await _service.GetAll();
             return View(allDevelopers);
         }
     }
