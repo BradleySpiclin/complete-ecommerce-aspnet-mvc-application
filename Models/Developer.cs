@@ -6,10 +6,10 @@ namespace eGameStore.Models
     {
         [Key]
         public int Id { get; set; }
-		[Display(Name = "Profile Picture")]
+		[Display(Name = "Developer Logo")]
 		public string ProfilePictureURL { get; set; }
 
-		[Display(Name = "Full Name")]
+		[Display(Name = "Developer Name")]
 		public string FullName { get; set; }
 
 		[Display(Name = "Biography")]

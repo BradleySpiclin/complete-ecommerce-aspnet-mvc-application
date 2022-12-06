@@ -7,9 +7,9 @@ namespace eGameStore.Models
         [Key]
         public int Id { get; set; }
         
-        [Display(Name = "Profile Picture")]
+        [Display(Name = "Publisher Logo")]
         public string ProfilePictureURL { get; set; }
-		[Display(Name = "Full Name")]
+		[Display(Name = "Publisher Name")]
 		public string FullName { get; set; }
 		[Display(Name = "Biography")]
 		public string Bio { get; set; }

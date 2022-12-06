@@ -8,9 +8,9 @@ namespace eGameStore.Data.Services
         Task<IEnumerable<Developer>> GetAll();
 
         // CRUD for Developer
-        Developer GetDeveloperById(int id);
-        void AddDeveloper(Developer developer);
-        void UpdateDeveloper(Developer developer);
-        void DeleteDeveloper(int id);
+        Developer GetById(int id);
+        void Add(Developer developer);
+        void Update(Developer developer);
+        void Delete(int id);
     }
 }

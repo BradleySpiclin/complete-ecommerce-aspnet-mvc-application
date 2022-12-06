@@ -11,11 +11,11 @@ namespace eGameStore.Data.Services
         {
             _context = context;
         }
-        public void AddDeveloper(Developer developer)
+        public void Add(Developer developer)
         {
             throw new NotImplementedException();
         }
-        public void DeleteDeveloper(int id)
+        public void Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -24,11 +24,11 @@ namespace eGameStore.Data.Services
             return await _context.Developer.ToListAsync();
         }
 
-        public Developer GetDeveloperById(int id)
+        public Developer GetById(int id)
         {
             throw new NotImplementedException();
         }
-        public void UpdateDeveloper(Developer developer)
+        public void Update(Developer developer)
         {
             throw new NotImplementedException();
         }
