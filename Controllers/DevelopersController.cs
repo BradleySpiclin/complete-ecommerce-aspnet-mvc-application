@@ -19,5 +19,10 @@ namespace eGameStore.Controllers
             var allDevelopers = await _service.GetAll();
             return View(allDevelopers);
         }
+
+        public IActionResult Create() 
+        {
+            return View();
+        }
     }
 }
