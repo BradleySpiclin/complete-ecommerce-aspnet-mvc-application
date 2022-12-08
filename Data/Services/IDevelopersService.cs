@@ -9,7 +9,7 @@ namespace eGameStore.Data.Services
 
         // CRUD for Developer
         Developer GetById(int id);
-        void Add(Developer developer);
+        public void Add(Developer developer);
         void Update(Developer developer);
         void Delete(int id);
     }

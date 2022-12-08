@@ -1,5 +1,6 @@
 ﻿using eGameStore.Data;
 using eGameStore.Data.Services;
+using eGameStore.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,6 +24,17 @@ namespace eGameStore.Controllers
         public IActionResult Create() 
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")]Developer developer) 
+        {
+            if(!ModelState.IsValid) 
+            {
+                return View(developer);
+            }
+            _service.Add(developer);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

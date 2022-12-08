@@ -7,15 +7,18 @@ namespace eGameStore.Models
         [Key]
         public int Id { get; set; }
 		[Display(Name = "Developer Logo")]
+        [Required(ErrorMessage ="Profile picture required")]
 		public string ProfilePictureURL { get; set; }
-
 		[Display(Name = "Developer Name")]
-		public string FullName { get; set; }
+        [Required(ErrorMessage = "Developer name required")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage ="Full name must be between 3 - 50 characters")]
+        public string FullName { get; set; }
 
 		[Display(Name = "Biography")]
-		public string Bio { get; set; }
+        [Required(ErrorMessage = "Biography required")]
+        public string Bio { get; set; }
 
         //Relationships
-        public List<Game> Games { get; set; }
+        public List<Game>? Games { get; set; }
     }
 }

@@ -13,7 +13,8 @@ namespace eGameStore.Data.Services
         }
         public void Add(Developer developer)
         {
-            throw new NotImplementedException();
+            _context.Developer.Add(developer);
+            _context.SaveChanges();
         }
         public void Delete(int id)
         {
