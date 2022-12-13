@@ -5,12 +5,12 @@ namespace eGameStore.Data.Services
     public interface IDevelopersService
     {
         // Return all Developer objects
-        Task<IEnumerable<Developer>> GetAll();
+        Task<IEnumerable<Developer>> GetAllAsync();
 
         // CRUD for Developer
-        Developer GetById(int id);
-        public void Add(Developer developer);
-        void Update(Developer developer);
-        void Delete(int id);
+        Task<Developer> GetByIdAsync(int id);
+        Task AddAsync(Developer developer);
+        Task<Developer> UpdateAsync(int id, Developer developer);
+        Task DeleteAsync(int id);
     }
 }

@@ -11,27 +11,32 @@ namespace eGameStore.Data.Services
         {
             _context = context;
         }
-        public void Add(Developer developer)
+        public async Task AddAsync(Developer developer)
         {
-            _context.Developer.Add(developer);
-            _context.SaveChanges();
+            await _context.Developer.AddAsync(developer);
+            await _context.SaveChangesAsync();
         }
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Developer.FirstOrDefaultAsync(x => x.Id == id);
+            _context.Developer.Remove(result);
+            await _context.SaveChangesAsync();
         }
-        public async Task<IEnumerable<Developer>> GetAll()
+        public async Task<IEnumerable<Developer>> GetAllAsync()
         {
             return await _context.Developer.ToListAsync();
         }
 
-        public Developer GetById(int id)
+        public async Task<Developer> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Developer.FirstOrDefaultAsync(x => x.Id == id);
+            return result;
         }
-        public void Update(Developer developer)
+        public async Task<Developer> UpdateAsync(int id, Developer newDeveloper)
         {
-            throw new NotImplementedException();
+            _context.Update(newDeveloper);
+            await _context.SaveChangesAsync();
+            return newDeveloper;
         }
 
     }
