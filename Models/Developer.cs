@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Asn1.X509;
+using StackExchange.Redis;
+using System.ComponentModel.DataAnnotations;
 
 namespace eGameStore.Models
 {
@@ -9,9 +12,9 @@ namespace eGameStore.Models
 		[Display(Name = "Developer Logo")]
         [Required(ErrorMessage ="Profile picture required")]
 		public string ProfilePictureURL { get; set; }
-		[Display(Name = "Developer Name")]
+        [Display(Name = "Developer Name")]
         [Required(ErrorMessage = "Developer name required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage ="Full name must be between 3 - 50 characters")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "Full name must be between 3 - 50 characters")]
         public string FullName { get; set; }
 
 		[Display(Name = "Biography")]

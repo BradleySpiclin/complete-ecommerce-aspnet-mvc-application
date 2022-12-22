@@ -16,7 +16,7 @@ builder.Services.AddScoped<IDevelopersService, DevelopersService>();
 var app = builder.Build();
 
 // Seed database
-AppDbInitializer.Seed(app);
+//AppDbInitializer.Seed(app);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

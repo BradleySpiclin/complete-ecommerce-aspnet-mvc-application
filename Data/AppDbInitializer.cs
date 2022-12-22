@@ -132,8 +132,6 @@ namespace eGameStore.Data
 						});
 						context.SaveChanges();
 					}
-
-
 				}
             }
         }

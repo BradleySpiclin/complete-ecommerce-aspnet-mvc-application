@@ -25,7 +25,7 @@ namespace eGameStore.Controllers
         {
             return View();
         }
-
+        // POST: Developers/Create/
         [HttpPost]
         public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")]Developer developer) 
         {
