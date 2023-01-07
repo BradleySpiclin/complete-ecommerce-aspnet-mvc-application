@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using eGameStore.Data.Base;
+using Microsoft.EntityFrameworkCore;
 using Org.BouncyCastle.Asn1.X509;
 using StackExchange.Redis;
 using System.ComponentModel.DataAnnotations;
 
 namespace eGameStore.Models
 {
-    public class Developer
+    public class Developer : IEntityBase
     {
         [Key]
         public int Id { get; set; }

@@ -1,16 +1,9 @@
-﻿using eGameStore.Models;
+﻿using eGameStore.Data.Base;
+using eGameStore.Models;
 
 namespace eGameStore.Data.Services
 {
-    public interface IDevelopersService
+    public interface IDevelopersService : IEntityBaseRepository<Developer>
     {
-        // Return all Developer objects
-        Task<IEnumerable<Developer>> GetAllAsync();
-
-        // CRUD for Developer
-        Task<Developer> GetByIdAsync(int id);
-        Task AddAsync(Developer developer);
-        Task<Developer> UpdateAsync(int id, Developer developer);
-        Task DeleteAsync(int id);
     }
 }
