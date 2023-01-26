@@ -1,4 +1,5 @@
 ﻿using eGameStore.Data;
+using eGameStore.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,17 +7,22 @@ namespace eGameStore.Controllers
 {
     public class GamesController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IGamesService _service;
 
-        public GamesController(AppDbContext context)
+        public GamesController(IGamesService service)
         {
-            _context = context;
+            _service = service;
         }
 
         public async Task<IActionResult> Index()
         {
-            var allGames = await _context.Games.Include(n => n.Developer).Include(n => n.Publisher).OrderBy(n => n.Name).ToListAsync();
+            var allGames = await _service.GetAllAsync();
             return View(allGames);
+        }
+
+        public IActionResult Create() 
+        {
+            return View();
         }
     }
 }

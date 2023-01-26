@@ -1,16 +1,20 @@
-﻿using eGameStore.Data.Enums;
+﻿using eGameStore.Data.Base;
+using eGameStore.Data.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eGameStore.Models
 {
-    public class Game
+    public class Game : IEntityBase
     {
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
+
+        [Display(Name = "Game Image")]
+        [Required(ErrorMessage = "Game image required")]
         public string ImageURL { get; set; }
         public DateTime ReleaseDate { get; set; }
 
