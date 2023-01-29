@@ -1,5 +1,6 @@
 using eGameStore.Data;
 using eGameStore.Data.Services;
+using eGameStore.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,7 @@ builder.Services.AddScoped<IPublishersService, PublishersService>();
 builder.Services.AddScoped<IGamesService, GamesService>();
 
 var app = builder.Build();
+
 
 // Seed database
 //AppDbInitializer.Seed(app);

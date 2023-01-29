@@ -2,7 +2,7 @@
 @using eGameStore.Data.Enums;
 
 @{
-	ViewData["Title"] = "Add a new Game";
+	ViewData["Title"] = "Create a new game";
 }
 <div class="row text">
     <div class="col-md-8 offset-2">
@@ -34,6 +34,11 @@
                         <input asp-for="Description" class="form-control" />
                         <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
 
                        <div class="form-group">
                          <label asp-for="GameGenre" class="control-label"></label>
@@ -41,7 +46,29 @@
                          <span asp-validation-for="GameGenre" class="text-danger"></span>
                         </div>
 
+                        <div class="form-group">
+                         <label asp-for="ReleaseDate" class="control-label"></label>
+                        <input asp-for="ReleaseDate" type="datetime" id="datepicker" class="form-control" autocomplete="off" />
+                         <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+                        </div>
 
+                        <div class="form-group">
+                         <label asp-for="DeveloperId" class="control-label"></label>
+                 @*       <select id="propertyDropdown">
+                           
+                            @foreach (var item in Model.Developer)
+                            {
+                                <option value="@item.">@item</option>
+                            }
+                        </select>*@
+                         <span asp-validation-for="DeveloperId" class="text-danger"></span>
+                        </div>
+
+                 @*   <div class="form-group">
+                        <label asp-for="GameGenre" class="control-label"></label>
+                        <select asp-for="GameGenre" class="form-control" asp-items="Html.GetEnumSelectList<GameGenre>()"></select>
+                        <span asp-validation-for="GameGenre" class="text-danger"></span>
+                    </div>*@
 
                     <div class="form-group" style="margin-top: 10px;">
                         <input type="submit" value="Create" class="btn btn-outline-success" />
@@ -64,5 +91,8 @@
             var output = document.getElementById('ProfilePicturePreview');
             output.src = $(this).val();
         })
+        $(document).ready(function () {
+            $("#datepicker").datepicker();
+        });
     </script>
                         }
